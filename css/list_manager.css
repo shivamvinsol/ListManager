@@ -1,0 +1,11 @@
+ul {
+  border: 1px black solid;
+  width: 12%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.delete {
+  margin-left: 40px;
+  background-color: red;
+}
