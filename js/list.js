@@ -97,7 +97,7 @@ List.prototype.displayList = function() {
 
   $.each(this.filteredListItems, function() {
     $deleteButton = $('<input>', { type: 'button', value: 'X', 'data-name': 'delete'}).addClass('delete'),
-    $listItem = $('<li>', { id: this.id, priority: this.priority }).text(this.value);
+    $listItem = $('<li>', { 'data-id': this.id, 'data-priority': this.priority }).text(this.value);
     if (this.deletable) {
       $listItem.append($deleteButton);
     }
@@ -109,6 +109,7 @@ List.prototype.displayList = function() {
 };
 
 List.prototype.removeListItem = function(listItem) {
+  debugger
   this.currentListItem = this.getCurrentListItem(listItem.data('id'));  // corresponding list object
   this.currentListItem.deleted = true; // soft delete
 };
